@@ -1,0 +1,49 @@
+{
+  "name": "react-dialogs",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "format": "biome format .",
+    "lint": "npm run lint:biome && npm run lint:css",
+    "lint:biome": "biome lint --error-on-warnings . && biome check .",
+    "lint:css": "stylelint **/*.css",
+    "css:format": "stylelint --fix",
+    "test": "jest",
+    "dev": "storybook dev -p 6006"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@biomejs/biome": "2.3.5",
+    "@storybook/addon-webpack5-compiler-swc": "4.0.2",
+    "@storybook/react-webpack5": "10.1.11",
+    "@testing-library/dom": "10.4.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.0",
+    "@types/jest": "30.0.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "jest": "30.2.0",
+    "jest-environment-jsdom": "30.2.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "stylelint": "16.26.1",
+    "stylelint-config-clean-order": "8.0.0",
+    "ts-jest": "29.4.6",
+    "tsup": "8.5.1",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "motion": "12.23.24",
+    "react-remove-scroll": "2.7.1",
+    "react-use": "17.6.0"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19"
+  }
+}

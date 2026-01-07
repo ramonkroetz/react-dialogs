@@ -1,0 +1,34 @@
+.react-dialog {
+  pointer-events: none;
+  z-index: 999999;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  height: fit-content;
+  max-height: 100%;
+  margin: auto;
+  padding: 0;
+  border: none;
+}
+
+.react-dialog * {
+  box-sizing: border-box;
+}
+
+.react-dialog-content {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.react-dialog[open] {
+  pointer-events: inherit;
+}
+
+.react-dialog::backdrop {
+  backdrop-filter: blur(0.25rem);
+}
