@@ -27,14 +27,5 @@
   },
   "[postcss]": {
     "editor.defaultFormatter": "biomejs.biome"
-  },
-  "emeraldwalk.runonsave": {
-    "commands": [
-      {
-        "match": ".*\\.(css|module.css)$",
-        "runIn": "terminal",
-        "cmd": "npm run css:format -- \"${file}\""
-      }
-    ]
   }
 }

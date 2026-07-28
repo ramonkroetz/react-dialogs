@@ -1,0 +1,2 @@
+.react-dialog{z-index:999999;box-sizing:border-box;pointer-events:none;border:none;flex-direction:column;width:fit-content;max-width:100%;height:fit-content;max-height:100%;margin:auto;padding:0;display:flex;inset:0;overflow:hidden}.react-dialog *{box-sizing:border-box}.react-dialog-content{width:100%;height:auto;overflow:auto}.react-dialog[open]{pointer-events:inherit}.react-dialog::backdrop{-webkit-backdrop-filter:blur(.25rem);backdrop-filter:blur(.25rem)}
+/*$vite$:1*/

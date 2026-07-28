@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!node_modules", "!lib"]
+    "includes": ["**", "!node_modules", "!lib", "!demo"]
   },
   "formatter": {
     "enabled": true,
@@ -17,11 +17,11 @@
       "performance": {
         "noAccumulatingSpread": "off"
       },
-      "suspicious": {
-        "noConsole": "error"
-      },
       "style": {
         "useImportType": "off"
+      },
+      "suspicious": {
+        "noConsole": "error"
       },
       "correctness": {
         "noUnusedImports": "error",
@@ -53,6 +53,7 @@
     "actions": {
       "source": {
         "useSortedAttributes": "on",
+        "useSortedProperties": "on",
         "organizeImports": {
           "level": "on",
           "options": {

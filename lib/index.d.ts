@@ -1,40 +1,47 @@
-import * as react_jsx_runtime from 'react/jsx-runtime';
+import { Context } from 'react';
+import { JSX } from 'react';
+import { PropsWithChildren } from 'react';
+import { ReactNode } from 'react';
 import { Variants } from 'motion/react';
-import * as react from 'react';
-import { PropsWithChildren, ReactNode } from 'react';
 
-type DialogProps = {
+export declare function Dialog({ id, children, animation, onClose }: PropsWithChildren<DialogProps>): JSX.Element;
+
+export declare const DialogContext: Context<DialogContextProps>;
+
+declare type DialogContextProps = {
+    dialogs: DialogState['dialogs'];
+    show: (dialogId: string, props?: Record<string, unknown>) => void;
+    close: (dialogId: string) => void;
+    updateProps: (dialogId: string, props: Record<string, unknown>) => void;
+    registerDialogId: (dialogId: string) => void;
+    unregisterDialogId: (dialogId: string) => void;
+};
+
+declare type DialogProps = {
     id: string;
     animation?: Variants | null;
-    onClickAwayCallback?: () => void;
+    onClose?: () => void;
 };
-declare function Dialog({ id, children, animation, onClickAwayCallback, }: PropsWithChildren<DialogProps>): react_jsx_runtime.JSX.Element;
 
-type ModalProps = {
-    show: () => void;
-    close: () => void;
+export declare function DialogProvider({ children, dialogs }: PropsWithChildren<{
+    dialogs?: ReactNode;
+}>): JSX.Element;
+
+declare type DialogState = {
+    dialogs: Record<string, ModalState>;
+};
+
+declare type ModalState = {
     isOpen: boolean;
     props: Record<string, unknown>;
 };
-type DialogContextProps = {
-    modals: Record<string, ModalProps>;
-    show: (modalId: string, props?: Record<string, unknown>) => void;
-    close: (modalId: string) => void;
-    overlayOrder: string[];
-    updateProps: (modalId: string, props: Record<string, unknown>) => void;
-};
-declare const DialogContext: react.Context<DialogContextProps>;
-declare function DialogProvider({ children, dialogs }: PropsWithChildren<{
-    dialogs: ReactNode;
-}>): react_jsx_runtime.JSX.Element;
 
-declare function useDialog<T>(id: string): {
+export declare function useDialog<T>(id: string): {
     show: (showProps?: T) => void;
     close: () => void;
-    updateProps: (newProps?: T) => void;
+    updateProps: (newProps?: Partial<T>) => void;
     isOpen: boolean;
     props: T | undefined;
-    isTopDialog: boolean;
 };
 
-export { Dialog, DialogContext, DialogProvider, useDialog };
+export { }

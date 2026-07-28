@@ -1,12 +1,11 @@
-.storybook
+.github
+.opencode
 .vscode
+demo
 src
 .gitignore
-.gitlab-ci.yml
 .nvmrc
 biome.json
-jest.config.mjs
-README.md
 tsconfig.json
-tsup.config.ts
-stylelint.config.mjs
+vitest.config.ts
+vite.config.ts

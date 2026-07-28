@@ -1,5 +1,5 @@
-import { Dialog } from '../../components/Dialog'
-import { useDialog } from '../../hooks/useDialog'
+import { Dialog } from '../../Dialog'
+import { useDialog } from '../../useDialog'
 
 export const DYNAMIC_MODAL_ID = 'dynamicModal'
 

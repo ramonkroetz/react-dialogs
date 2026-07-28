@@ -28,7 +28,7 @@ export function ExampleModal() {
   return (
     <Dialog
       id={EXAMPLE_MODAL_ID}
-      onClickAwayCallback={/* You can pass a callback that will be trigged on modal close */}
+      onClose={/* You can pass a callback that will be trigged on modal close */}
     >
       <p>{props?.message}</p>
       <button onClick={close}>Close Modal!</button>
@@ -77,6 +77,22 @@ export function GlobalProviders() {
       }
     >
       {children}
+    </DialogProvider>
+  )
+}
+```
+
+If you need nested contexts, configure nested providers with their own `dialogs` prop.
+
+```tsx
+import { DialogProvider } from 'react-dialogs'
+
+export function GlobalProviders() {
+  return (
+    <DialogProvider dialogs={<GlobalModal />}>
+      <UserProvider>
+        <DialogProvider dialogs={<UserScopedModal />}>{children}</DialogProvider>
+      </UserProvider>
     </DialogProvider>
   )
 }

@@ -4,12 +4,15 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "strict": true,
+    "rootDir": ".",
     "outDir": "./lib",
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "skipLibCheck": true
   },
-  "exclude": ["node_modules", "lib"]
+  "include": ["src", "demo", "vite.config.ts", "vitest.config.ts"],
+  "exclude": ["node_modules", "lib", "dist"]
 }
