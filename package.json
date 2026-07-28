@@ -58,5 +58,6 @@
   },
   "allowScripts": {
     "opencode-ai@1.18.8": true
-  }
+  },
+  "version": "2.0.0"
 }
